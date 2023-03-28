@@ -1,0 +1,18 @@
+---
+upstream_project_url: 'https://github.com/naggie/dstask'
+upstream_ref: v0.26
+downstream_package_name: dstask
+specfile_path: .distro/dstask.spec
+patch_generation_ignore_paths:
+  - .distro/
+sync_changelog: true
+files_to_sync:
+  - src: .distro/
+    dest: .
+    delete: true
+    filters:
+      - 'protect .git*'
+      - 'protect sources'
+      - 'exclude source-git.yaml'
+      - 'exclude .gitignore'
+...
